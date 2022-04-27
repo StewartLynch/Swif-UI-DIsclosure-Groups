@@ -12,9 +12,9 @@ import Foundation
 class CountriesListViewModel: ObservableObject {
     @Published var cities: [City] = []
     @Published var countries: [Country] = []
-
-    var citiesDict: [String: [City]] {
-        Dictionary(grouping: cities) { $0.country.name }
+    
+    var countriesDict: [Country : [City]] {
+        Dictionary(grouping: cities) { $0.country }
     }
 
     func loadCitiesAndCountries() {

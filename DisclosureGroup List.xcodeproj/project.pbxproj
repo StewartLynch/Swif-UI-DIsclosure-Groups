@@ -17,6 +17,7 @@
 		BB264DB92818B38F00076DC1 /* Cities.json in Resources */ = {isa = PBXBuildFile; fileRef = BB264DB82818B38F00076DC1 /* Cities.json */; };
 		BB264DBB2818B3B900076DC1 /* CitiesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB264DBA2818B3B900076DC1 /* CitiesListViewModel.swift */; };
 		BB264DBD2818B40400076DC1 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB264DBC2818B40400076DC1 /* Models.swift */; };
+		BBF72DD32819EDDC00860E32 /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF72DD22819EDDC00860E32 /* DemoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BB264DB82818B38F00076DC1 /* Cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cities.json; sourceTree = "<group>"; };
 		BB264DBA2818B3B900076DC1 /* CitiesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewModel.swift; sourceTree = "<group>"; };
 		BB264DBC2818B40400076DC1 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		BBF72DD22819EDDC00860E32 /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				BB264DAA2818B27900076DC1 /* Preview Assets.xcassets */,
+				BBF72DD22819EDDC00860E32 /* DemoView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				BB264DBD2818B40400076DC1 /* Models.swift in Sources */,
 				BB264DBB2818B3B900076DC1 /* CitiesListViewModel.swift in Sources */,
 				BB264DB62818B33100076DC1 /* Bundle+Extension.swift in Sources */,
+				BBF72DD32819EDDC00860E32 /* DemoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
