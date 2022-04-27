@@ -16,7 +16,7 @@ class CountriesListViewModel: ObservableObject {
     var citiesDict: [String: [City]] {
         Dictionary(grouping: cities) { $0.country.name }
     }
-    
+
     func loadCitiesAndCountries() {
         // Sorting by tuples video reference: https://youtu.be/4ochXtdrd70
         cities = Bundle.main.decode([City].self, from: "Cities.json")

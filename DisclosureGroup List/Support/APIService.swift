@@ -5,13 +5,14 @@ public class APIService {
         self.urlString = urlString
     }
     public func getJSON<T: Decodable>(dateDecodingStategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
-                                      keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) async throws -> T {
+                                      keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys)
+    async throws -> T {
         guard let url = URL(string: urlString) else {
            fatalError("Error: Invalid URL.")
         }
         let request = URLRequest(url: url)
         let (data, response) = try await URLSession.shared.data(for: request)
-        guard let _ = response as? HTTPURLResponse else {
+        guard response as? HTTPURLResponse != nil else {
             fatalError("Error: Data Request error.")
         }
         let decoder = JSONDecoder()

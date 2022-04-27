@@ -17,7 +17,7 @@ struct CountriesListView: View {
                 List {
                     ForEach(viewModel.cities) { city in
                         VStack(alignment: .leading) {
-                            HStack{
+                            HStack {
                                 Text(city.country.flag)
                                 Text(city.country.name)
                             }
