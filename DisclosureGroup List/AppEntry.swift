@@ -10,10 +10,10 @@
 import SwiftUI
 
 @main
-struct DisclosureGroup_ListApp: App {
+struct AppEntry: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CountriesListView()
         }
     }
 }
