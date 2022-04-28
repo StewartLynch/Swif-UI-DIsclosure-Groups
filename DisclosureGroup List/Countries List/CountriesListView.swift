@@ -14,22 +14,41 @@ struct CountriesListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Spacer()
+                    Button("Expand all \(Image(systemName: "chevron.right"))") {
+                        withAnimation {
+                            viewModel.expand(true)
+                        }
+                    }
+                    .disabled(viewModel.allExpanded)
+                    Button("Collapse all \(Image(systemName: "chevron.down"))") {
+                        withAnimation {
+                            viewModel.expand(false)
+                        }
+                    }
+                    .disabled(viewModel.allCollapsed)
+                }
+                .padding()
                 List {
-                    ForEach(viewModel.cities) { city in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(city.country.flag)
-                                Text(city.country.name)
-                            }
-                            .font(.title3)
-                            VStack(alignment: .leading) {
-                                Text(city.name)
-                                HStack {
-                                    Spacer()
-                                    Text("**Population:** \(city.population)")
-                                        .font(.caption)
+                    ForEach($viewModel.countries, id: \.name) { $country in
+                        DisclosureGroup(isExpanded: $country.open) {
+                            ForEach(viewModel.countriesDict[country] ?? []) { city in
+                                VStack(alignment: .leading) {
+                                    Text(city.name)
+                                    HStack {
+                                        Spacer()
+                                        Text("**Population:** \(city.population)")
+                                            .font(.caption)
+                                    }
                                 }
                             }
+                        } label: {
+                            HStack {
+                                Text(country.flag)
+                                Text(country.name)
+                            }
+                            .font(.title3)
                         }
                     }
                 }
