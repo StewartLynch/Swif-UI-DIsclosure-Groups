@@ -20,11 +20,11 @@ struct Country: Codable, Hashable {
     let name: String
     let flag: String
     var open: Bool
-    
+
     enum CodingKeys: String, CodingKey {
         case name, flag, open
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)

@@ -12,15 +12,15 @@ import Foundation
 class CountriesListViewModel: ObservableObject {
     @Published var cities: [City] = []
     @Published var countries: [Country] = []
-    
-    var countriesDict: [Country : [City]] {
+
+    var countriesDict: [Country: [City]] {
         Dictionary(grouping: cities) { $0.country }
     }
-    
+
     var allExpanded: Bool {
         countries.allSatisfy {$0.open}
     }
-    
+
     var allCollapsed: Bool {
         countries.allSatisfy {!$0.open}
     }
@@ -32,7 +32,7 @@ class CountriesListViewModel: ObservableObject {
         countries = cities.map {$0.country}
         countries = Array(Set(countries)).sorted(by: {$0.name < $1.name})
     }
-    
+
     func expand(_ expand: Bool) {
         countries.indices.forEach {
             countries[$0].open = expand
